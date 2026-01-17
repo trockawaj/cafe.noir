@@ -11,8 +11,21 @@ const navItems = [
 
 export const BottomNav = () => {
     return (
-        <nav className="w-full pb-24 relative z-10">
-            <div className="container mx-auto px-6">
+        <nav className="w-full relative z-10 overflow-hidden">
+            {/* Background Texture with Parallax-like feel */}
+            <div
+                className="absolute inset-0 z-0 opacity-40 bg-fixed"
+                style={{
+                    backgroundImage: "url('/images/coffee-texture.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            />
+
+            {/* Gradient Overlay for Readability */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+
+            <div className="container mx-auto px-6 py-24 relative z-10">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
                     {navItems.map((item, idx) => (
                         <Link key={item.name} to={item.path} className="group text-center">
