@@ -5,10 +5,25 @@ import { Footer } from '../components/Footer';
 
 export const Home = () => {
     return (
-        <div className="min-h-screen bg-background bg-noise">
-            <FramedHero />
-            <BottomNav />
-            <Footer />
+        <div className="min-h-screen bg-background relative overflow-hidden">
+            {/* Global Coffee Texture Background */}
+            <div
+                className="fixed inset-0 z-0 opacity-40 pointer-events-none"
+                style={{
+                    backgroundImage: "url('/images/coffee-texture.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            />
+            {/* Global Noise Overlay */}
+            <div className="fixed inset-0 z-0 bg-noise opacity-50 pointer-events-none" />
+
+            {/* Content Container */}
+            <div className="relative z-10">
+                <FramedHero />
+                <BottomNav />
+                <Footer />
+            </div>
         </div>
     );
 };

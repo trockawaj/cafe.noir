@@ -11,19 +11,9 @@ const navItems = [
 
 export const BottomNav = () => {
     return (
-        <nav className="w-full relative z-10 overflow-hidden">
-            {/* Background Texture with Parallax-like feel */}
-            <div
-                className="absolute inset-0 z-0 opacity-40 bg-fixed"
-                style={{
-                    backgroundImage: "url('/images/coffee-texture.png')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                }}
-            />
-
-            {/* Gradient Overlay for Readability */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
+        <nav className="w-full relative overflow-hidden">
+            {/* Gradient Overlay for Readability (extending the fade from Hero) */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80" />
 
             <div className="container mx-auto px-6 py-24 relative z-10">
                 <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
